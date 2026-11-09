@@ -1140,10 +1140,20 @@ font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 .fp-topbar-right { width: 100%; }
 .fp-scope-select { width: auto; flex: 1; }
 .fp-content { padding: 16px; padding-bottom: 96px; }
+.fp-kbd { display: none; }
+.fp-viewing { display: none; }
+.cols-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .fp-bottom-nav { display: flex; position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-top: 1px solid var(--border); justify-content: space-around; padding: 8px 0; z-index: 30; }
 .fp-bottom-nav a { text-decoration: none; color: var(--text-muted); font-size: 1.1rem; display: flex; flex-direction: column; align-items: center; font-size: 1rem; }
 .fp-bottom-nav a span { font-size: .7rem; }
 .fp-bottom-nav a.active { color: var(--accent-text); font-weight: 600; }
+}
+@media (max-width: 400px) {
+.cols-5 { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+.fp-scope-select { display: none; }
+.fp-search { flex: 1 1 auto; }
 }
 .fp-sidebar.collapsed { width: 76px; }
 .fp-sidebar.collapsed .fp-brand-name, .fp-sidebar.collapsed .fp-nav-item span:last-child, .fp-sidebar.collapsed .fp-side-summary { display: none; }
@@ -1199,7 +1209,7 @@ font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 <span class="sr-only">Buscar lançamentos</span>
 <span aria-hidden="true">⌕</span>
 <input class="input" id="globalSearch" type="search" placeholder="Buscar lançamentos…">
-<kbd class="fp-kbd">⌘K</kbd>
+<kbd class="fp-kbd">Ctrl K</kbd>
 </label>
 <select class="input fp-scope-select" id="scopeSelect" aria-label="Escopo">
 <option value="pessoal">Pessoal</option>
@@ -1531,7 +1541,7 @@ return String(v);
 }
 }
 function pct(v) {
-return (Number(v || 0) * 100).toFixed(1).replace('.', ',') + '%';
+return (Number(v || 0) * 100).toFixed(1).replace('.0', '').replace('.', ',') + '%';
 }
 function fmtDate(iso) {
 if (!iso) return '-';
@@ -1855,7 +1865,7 @@ return '<div class="row between mb-3">' +
 '<button type="button" role="tab" class="fp-scope-tab" data-action="set-scope" data-scope="empresa" aria-selected="' + eSel + '">Empresa</button>' +
 '<button type="button" role="tab" class="fp-scope-tab" data-action="set-scope" data-scope="consolidado" aria-selected="' + cSel + '">Consolidado</button>' +
 '</div>' +
-'<div class="text-xs muted">Visualizando: <strong>' + scopeLabel() + '</strong></div>' +
+'<div class="text-xs muted fp-viewing">Visualizando: <strong>' + scopeLabel() + '</strong></div>' +
 '</div>';
 }
 
