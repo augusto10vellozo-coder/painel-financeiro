@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Painel Financeiro — Pessoal + Empresa</title>
+<meta name="description" content="Protótipo de dashboard financeiro que consolida finanças pessoais e de empresa: três escopos, KPIs, gráfico receita × custos e distribuição por categoria. HTML, CSS e JavaScript puros.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Painel Financeiro — protótipo de dashboard">
+<meta property="og:description" content="Pessoal, Empresa e Consolidado na mesma tela: KPIs com variação, gráfico receita × custos em SVG e distribuição por categoria. Arquivo único, sem framework.">
+<meta property="og:url" content="https://augusto10vellozo-coder.github.io/painel-financeiro/">
+<meta property="og:image" content="https://augusto10vellozo-coder.github.io/painel-financeiro/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
 /* Skip artifact shell — fixed styles served beside every artifact.
@@ -1199,7 +1206,7 @@ font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 <option value="empresa">Empresa</option>
 <option value="consolidado" selected>Consolidado</option>
 </select>
-<div class="fp-avatar" title="Ana Beatriz Lima">AL</div>
+<div class="fp-avatar" title="Cezar Vellozo">CV</div>
 </div>
 </header>
 
@@ -1453,20 +1460,20 @@ despesa: { pessoal: ['Moradia', 'Alimentação', 'Transporte', 'Lazer', 'Outros'
 };
 
 var EXEMPLO = [
-{ id: 'e1', desc: 'Salário líquido', tipo: 'receita', escopo: 'pessoal', cat: 'Salário / Retirada', valor: 6800, data: '2025-04-05', rec: true },
-{ id: 'e2', desc: 'Freelance landing page', tipo: 'receita', escopo: 'pessoal', cat: 'Freelance', valor: 1450, data: '2025-04-18', rec: false },
-{ id: 'e3', desc: 'Aluguel apartamento', tipo: 'despesa', escopo: 'pessoal', cat: 'Moradia', valor: 2100, data: '2025-04-08', rec: true },
-{ id: 'e4', desc: 'Mercado do mês', tipo: 'despesa', escopo: 'pessoal', cat: 'Alimentação', valor: 1240.5, data: '2025-04-12', rec: false },
-{ id: 'e5', desc: 'Faturamento cliente Alfa', tipo: 'receita', escopo: 'empresa', cat: 'Faturamento clientes', valor: 28500, data: '2025-04-15', rec: false },
-{ id: 'e6', desc: 'Folha de pagamento abril', tipo: 'despesa', escopo: 'empresa', cat: 'Folha de pagamento', valor: 11200, data: '2025-04-20', rec: true },
-{ id: 'e7', desc: 'Fornecedor servidores cloud', tipo: 'despesa', escopo: 'empresa', cat: 'Fornecedores', valor: 3450.9, data: '2025-04-22', rec: true },
-{ id: 'e8', desc: 'DAS Simples Nacional', tipo: 'despesa', escopo: 'empresa', cat: 'Impostos', valor: 2870, data: '2025-04-20', rec: true },
-{ id: 'e9', desc: 'Campanha de anúncios', tipo: 'despesa', escopo: 'empresa', cat: 'Marketing', valor: 1900, data: '2025-04-25', rec: false },
-{ id: 'e10', desc: 'Cinema e jantar', tipo: 'despesa', escopo: 'pessoal', cat: 'Lazer', valor: 320, data: '2025-04-27', rec: false },
-{ id: 'e11', desc: 'Faturamento cliente Beta', tipo: 'receita', escopo: 'empresa', cat: 'Serviços', valor: 17800, data: '2025-03-14', rec: false },
-{ id: 'e12', desc: 'Retirada do sócio', tipo: 'receita', escopo: 'pessoal', cat: 'Salário / Retirada', valor: 4000, data: '2025-03-28', rec: false },
-{ id: 'e13', desc: 'Folha de pagamento março', tipo: 'despesa', escopo: 'empresa', cat: 'Folha de pagamento', valor: 10950, data: '2025-03-20', rec: true },
-{ id: 'e14', desc: 'Gasolina e pedágios', tipo: 'despesa', escopo: 'pessoal', cat: 'Transporte', valor: 410.75, data: '2025-03-16', rec: false }
+{ id: 'e1', desc: 'Salário líquido', tipo: 'receita', escopo: 'pessoal', cat: 'Salário / Retirada', valor: 6800, data: '2026-10-05', rec: true },
+{ id: 'e2', desc: 'Freelance landing page', tipo: 'receita', escopo: 'pessoal', cat: 'Freelance', valor: 1450, data: '2026-10-18', rec: false },
+{ id: 'e3', desc: 'Aluguel apartamento', tipo: 'despesa', escopo: 'pessoal', cat: 'Moradia', valor: 2100, data: '2026-10-08', rec: true },
+{ id: 'e4', desc: 'Mercado do mês', tipo: 'despesa', escopo: 'pessoal', cat: 'Alimentação', valor: 1240.5, data: '2026-10-12', rec: false },
+{ id: 'e5', desc: 'Faturamento cliente Alfa', tipo: 'receita', escopo: 'empresa', cat: 'Faturamento clientes', valor: 28500, data: '2026-10-15', rec: false },
+{ id: 'e6', desc: 'Folha de pagamento outubro', tipo: 'despesa', escopo: 'empresa', cat: 'Folha de pagamento', valor: 11200, data: '2026-10-20', rec: true },
+{ id: 'e7', desc: 'Fornecedor servidores cloud', tipo: 'despesa', escopo: 'empresa', cat: 'Fornecedores', valor: 3450.9, data: '2026-10-22', rec: true },
+{ id: 'e8', desc: 'DAS Simples Nacional', tipo: 'despesa', escopo: 'empresa', cat: 'Impostos', valor: 2870, data: '2026-10-20', rec: true },
+{ id: 'e9', desc: 'Campanha de anúncios', tipo: 'despesa', escopo: 'empresa', cat: 'Marketing', valor: 1900, data: '2026-10-25', rec: false },
+{ id: 'e10', desc: 'Cinema e jantar', tipo: 'despesa', escopo: 'pessoal', cat: 'Lazer', valor: 320, data: '2026-10-27', rec: false },
+{ id: 'e11', desc: 'Faturamento cliente Beta', tipo: 'receita', escopo: 'empresa', cat: 'Serviços', valor: 17800, data: '2026-09-14', rec: false },
+{ id: 'e12', desc: 'Retirada do sócio', tipo: 'receita', escopo: 'pessoal', cat: 'Salário / Retirada', valor: 4000, data: '2026-09-28', rec: false },
+{ id: 'e13', desc: 'Folha de pagamento setembro', tipo: 'despesa', escopo: 'empresa', cat: 'Folha de pagamento', valor: 10950, data: '2026-09-20', rec: true },
+{ id: 'e14', desc: 'Gasolina e pedágios', tipo: 'despesa', escopo: 'pessoal', cat: 'Transporte', valor: 410.75, data: '2026-09-16', rec: false }
 ];
 
 var DEFAULT_BUDGETS = { Moradia: 2300, Alimentação: 1500, Transporte: 600, Lazer: 500, 'Folha de pagamento': 12000, Fornecedores: 4000, Impostos: 3000, Marketing: 2000 };
