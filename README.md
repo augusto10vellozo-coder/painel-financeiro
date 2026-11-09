@@ -5,6 +5,8 @@ empresa numa única base, com três escopos: **Pessoal**, **Empresa** e **Consol
 
 Arquivo único de HTML, CSS e JavaScript — sem framework, sem build, sem dependência externa.
 
+**▶ [Ver o protótipo ao vivo](https://augusto10vellozo-coder.github.io/painel-financeiro/)**
+
 ![Painel Financeiro](docs/preview.png)
 
 ---
