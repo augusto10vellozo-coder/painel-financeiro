@@ -1,6 +1,7 @@
 # Painel Financeiro
 
 [![CI](https://github.com/augusto10vellozo-coder/painel-financeiro/actions/workflows/ci.yml/badge.svg)](https://github.com/augusto10vellozo-coder/painel-financeiro/actions/workflows/ci.yml)
+![Lighthouse](https://img.shields.io/badge/Lighthouse-100%2F100%2F100-2ea44f?style=flat-square)
 
 **Protótipo de alta fidelidade de um dashboard financeiro** que consolida finanças pessoais e de uma
 empresa numa única base, com três escopos: **Pessoal**, **Empresa** e **Consolidado**.
