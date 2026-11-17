@@ -462,7 +462,7 @@ table.shell-table td.skip-table-empty { color: var(--text-muted); text-align: ce
     return el;
   }
   function frame(el, w, h) {
-    var svg = svgEl("svg", { viewBox: "0 0 " + w + " " + h, role: "img" });
+    var svg = svgEl("svg", { viewBox: "0 0 " + w + " " + h, role: "img", "aria-label": "Receita e custos por mês" });
     el = resolve(el);
     el.innerHTML = "";
     el.appendChild(svg);
@@ -1043,7 +1043,7 @@ table.shell-table td.skip-table-empty { color: var(--text-muted); text-align: ce
 --bg: #f3f4f6;
 --surface: #ffffff;
 --text: #111827;
---text-muted: #6b7280;
+--text-muted: #5f6672;
 --border: #e5e7eb;
 --success: #15803d;
 --danger: #b91c1c;
